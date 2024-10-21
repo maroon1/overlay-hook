@@ -4,18 +4,28 @@
   "description": "Hook for all overlay",
   "keywords": [],
   "license": "MIT",
-  "author": "liuxiaojun@lf-network.com",
+  "author": "sage2257@outlook.com",
   "sideEffects": false,
   "type": "module",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./antd": {
+      "import": {
+        "types": "./dist/antd/index.d.ts",
+        "default": "./dist/antd/index.js"
+      },
+      "require": {
+        "types": "./dist/antd/index.d.cts",
+        "default": "./dist/antd/index.cjs"
       }
     },
     "./package.json": "./package.json"
@@ -30,9 +40,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {},
   "devDependencies": {
     "@types/react": "^18.3.11",
+    "antd": "^4.24.16",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-packagejson": "^2.5.3",
@@ -41,10 +51,15 @@
     "typescript": "^5.6.3"
   },
   "peerDependencies": {
+    "antd": "^4 || ^5",
     "react": "^18 || ^19"
   },
+  "peerDependenciesMeta": {
+    "antd": {
+      "optional": true
+    }
+  },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://repository.lfsz.codefriend.top/repository/npm-group/"
+    "access": "public"
   }
 }
