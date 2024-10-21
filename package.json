@@ -1,0 +1,50 @@
+{
+  "name": "overlay-hook",
+  "version": "1.0.0",
+  "description": "Hook for all overlay",
+  "keywords": [],
+  "license": "MIT",
+  "author": "liuxiaojun@lf-network.com",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^18.3.11",
+    "prettier": "^3.3.3",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-packagejson": "^2.5.3",
+    "react": "^18.3.1",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.3"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://repository.lfsz.codefriend.top/repository/npm-group/"
+  }
+}
